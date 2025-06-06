@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 import platform
 from base64 import b64encode
@@ -54,7 +53,7 @@ class MirrorStatus:
     STATUS_ARCHIVING   = "𝙰𝚛𝚌𝚑𝚒𝚟𝚎"
     STATUS_EXTRACTING  = "𝙴𝚡𝚝𝚛𝚊𝚌𝚝"
     STATUS_SPLITTING   = "𝚂𝚙𝚕𝚒𝚝𝚝𝚒𝚗𝚐"
-    STATUS_METADATA    = "𝙰𝚍𝚍𝚒𝚗𝚐 𝙼𝚎𝚝𝚊𝚍𝚊𝚝𝚊 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 @𝙿𝙱𝚡1_𝙱𝚘𝚝𝚜"
+    STATUS_METADATA    = "𝙰𝚍𝚍𝚒𝚗𝚐 𝙼𝚎𝚝𝚊𝚍𝚊𝚝𝚊 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝙱𝚢 @QueenMirrorOfficial"
     STATUS_CHECKING    = "𝙲𝚑𝚎𝚌𝚔𝚄𝚙"
     STATUS_SEEDING     = "𝚂𝚎𝚎𝚍𝚒𝚗𝚐"
 
@@ -144,10 +143,10 @@ def get_progress_bar_string(pct):
     p = min(max(pct, 0), 100)
     cFull = int(p // 8)
     cPart = int(p % 8 - 1)
-    p_str = '●' * cFull
+    p_str = '▰' * cFull
     if cPart >= 0:
-        p_str += ['◌', '○', '○', '◎', '◉', '◕', '●'][cPart]
-    p_str += '◌' * (12 - cFull)
+        p_str += ['▱', '▱', '▱', '▱', '▱', '▱', '▱'][cPart]
+    p_str += '▱' * (12 - cFull)
     return f"[{p_str}]"
 
 
