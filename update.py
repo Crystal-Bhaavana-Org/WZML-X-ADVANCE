@@ -49,15 +49,15 @@ if DATABASE_URL is not None:
             and config_dict is not None:
         environ['UPSTREAM_REPO'] = config_dict['UPSTREAM_REPO']
         environ['UPSTREAM_BRANCH'] = config_dict['UPSTREAM_BRANCH']
-        environ['UPGRADE_PACKAGES'] = config_dict.get('UPDATE_PACKAGES', 'False')
+        environ['UPGRADE_PACKAGES'] = config_dict.get('UPDATE_PACKAGES', 'True')
     conn.close()
 
-UPGRADE_PACKAGES = environ.get('UPGRADE_PACKAGES', 'False') 
+UPGRADE_PACKAGES = environ.get('UPGRADE_PACKAGES', 'True') 
 if UPGRADE_PACKAGES.lower() == 'true':
     packages = [dist.project_name for dist in working_set]
     scall("uv pip install --system " + ' '.join(packages), shell=True)
 
-UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/jattsbots/PBX1-LEECH')
+UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/Crystal-Bhaavana-Org/WZML-X-ADVANCE')
 if len(UPSTREAM_REPO) == 0:
     UPSTREAM_REPO = None
 
