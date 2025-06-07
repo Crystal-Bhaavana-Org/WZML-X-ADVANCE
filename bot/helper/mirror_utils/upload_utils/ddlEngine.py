@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 from pathlib import Path
 from traceback import format_exc
